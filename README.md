@@ -18,4 +18,14 @@ Install RabbitMQ in windows :
 3. Run the application: `mvn clean spring-boot:run`
 4. Open new terminal & run rabbit-mq docker container: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management`
 5. Open RabbitMQ Management Web Console: localhost:15672
- 
+6. Send request:
+```
+POST http://localhost:8080/order/dramagasunda
+
+{
+    "name": "Uzumaki Naruto",
+    "qty": 12,
+    "price": 12500
+}
+
+``` 
