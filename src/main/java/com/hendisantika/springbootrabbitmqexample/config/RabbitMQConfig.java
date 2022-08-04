@@ -1,5 +1,7 @@
 package com.hendisantika.springbootrabbitmqexample.config;
 
+import org.springframework.amqp.core.Queue;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -18,5 +20,12 @@ public class RabbitMQConfig {
     private final String QUEUE = "items-queue";
 
     private final String EXCHANGE = "otp-exchange";
+
+    private final String ROUTING_KEY = "items";
+
+    @Bean
+    Queue queue() {
+        return new Queue(QUEUE, true);
+    }
 
 }
