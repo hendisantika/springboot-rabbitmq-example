@@ -1,7 +1,7 @@
 spring:
   rabbitmq:
-    host: localhost
+    host: woodpecker.rmq.cloudamqp.com
     port: 5672
-    username: guest
-    password: guest
-#    virtual-host: localhost
+    username: kdflkehp
+    password: UupVPce591B7kzw21x5utsGxM10VQ-P4
+    virtual-host: kdflkehp

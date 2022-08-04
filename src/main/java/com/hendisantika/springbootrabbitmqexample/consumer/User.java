@@ -21,6 +21,6 @@ public class User {
 
     @RabbitListener(queues = MessagingConfig.QUEUE)
     public void consumeMessageFromQueue(OrderStatus orderStatus) {
-        log.info("Message recieved from queue : " + orderStatus);
+        log.info("Message received from queue : " + orderStatus);
     }
 }

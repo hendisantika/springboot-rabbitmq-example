@@ -34,7 +34,7 @@ public class OrderPublisher {
         order.setOrderId(UUID.randomUUID().toString());
         //restaurantservice
         //payment service
-        OrderStatus orderStatus = new OrderStatus(order, "PROCESS", "order placed succesfully in " + restaurantName);
+        OrderStatus orderStatus = new OrderStatus(order, "PROCESS", "order placed successfully in " + restaurantName);
         template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_KEY, orderStatus);
         return "Success !!";
     }
