@@ -8,8 +8,8 @@ Install RabbitMQ in windows :
 3. Go to RabbitMQ Server install Directory C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.3\sbin
 4. Run command rabbitmq-plugins enable rabbitmq_management
 5. Open browser and enter http://localhost:15672/ to redirect to RabbitMQ Dashboard
-6. Also we can Open it with IP Address http://127.0.0.1:15672
-7. Login page default username and password is guest 
+6. Also, we can Open it with IP Address http://127.0.0.1:15672
+7. Login page default username and password is guest
 8. After successfully login you should see RabbitMQ Home page
 
 ### Things todo List
@@ -28,31 +28,29 @@ POST http://localhost:8080/order/dramagasunda
     "price": 12500
 }
 
-  .   ____          _            __ _ _
+   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.3.4.RELEASE)
+ :: Spring Boot ::                (v2.7.2)
 
-2020-09-30 06:12:57.643  INFO 81221 --- [           main] h.s.SpringbootRabbitmqExampleApplication : Starting SpringbootRabbitmqExampleApplication on Hendis-MacBook-Pro.local with PID 81221 (/Users/hendisantika/IdeaProjects/springboot-rabbitmq-example/target/classes started by hendisantika in /Users/hendisantika/IdeaProjects/springboot-rabbitmq-example)
-2020-09-30 06:12:57.653  INFO 81221 --- [           main] h.s.SpringbootRabbitmqExampleApplication : No active profile set, falling back to default profiles: default
-2020-09-30 06:12:59.750  INFO 81221 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-30 06:12:59.769  INFO 81221 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-30 06:12:59.769  INFO 81221 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
-2020-09-30 06:12:59.915  INFO 81221 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-30 06:12:59.915  INFO 81221 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2120 ms
-2020-09-30 06:13:01.091  INFO 81221 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-30 06:13:01.631  INFO 81221 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-30 06:13:01.635  INFO 81221 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2020-09-30 06:13:01.716  INFO 81221 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#a8d1053:0/SimpleConnection@93e25a20 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 53183]
-2020-09-30 06:13:01.913  INFO 81221 --- [           main] h.s.SpringbootRabbitmqExampleApplication : Started SpringbootRabbitmqExampleApplication in 4.928 seconds (JVM running for 11.454)
-2020-09-30 06:14:21.636  INFO 81221 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-30 06:14:21.636  INFO 81221 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-30 06:14:21.661  INFO 81221 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
-2020-09-30 06:14:22.207  INFO 81221 --- [ntContainer#0-1] c.h.s.consumer.User                      : Message recieved from queue : OrderStatus(order=Order(orderId=1c2e8c19-0ca9-42f6-9364-18c1d0bb3109, name=Uzumaki Naruto, qty=1, price=2500.0), status=PROCESS, message=order placed succesfully in dramagasunda)
-2020-09-30 06:19:31.071  INFO 81221 --- [ntContainer#0-1] c.h.s.consumer.User                      : Message recieved from queue : OrderStatus(order=Order(orderId=a2405aa1-694a-484e-b8e7-5cc3720a651c, name=Uzumaki Naruto, qty=12, price=12500.0), status=PROCESS, message=order placed succesfully in dramagasunda2)
-2020-09-30 06:20:18.492  INFO 81221 --- [ntContainer#0-1] c.h.s.consumer.User                      : Message recieved from queue : OrderStatus(order=Order(orderId=e82ea089-5aed-4125-bfaa-1d11f287f56c, name=Uzumaki Naruto, qty=12, price=12500.0), status=PROCESS, message=order placed succesfully in dramagasunda)
-
+2022-08-04 14:34:29.580  INFO 64660 --- [           main] h.s.SpringbootRabbitmqExampleApplication : Starting SpringbootRabbitmqExampleApplication using Java 18.0.2 on Powercommerceasias-MacBook-Pro.local with PID 64660 (/Users/powercommerce/IdeaProjects/springboot-rabbitmq-example/target/classes started by powercommerce in /Users/powercommerce/IdeaProjects/springboot-rabbitmq-example)
+2022-08-04 14:34:29.581  INFO 64660 --- [           main] h.s.SpringbootRabbitmqExampleApplication : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 14:34:29.951  INFO 64660 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 14:34:29.955  INFO 64660 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 14:34:29.955  INFO 64660 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-04 14:34:29.995  INFO 64660 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-04 14:34:29.995  INFO 64660 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 396 ms
+2022-08-04 14:34:30.303  INFO 64660 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 14:34:30.304  INFO 64660 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [woodpecker.rmq.cloudamqp.com:5672]
+2022-08-04 14:34:31.587  INFO 64660 --- [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#656922a0:0/SimpleConnection@800d065 [delegate=amqp://kdflkehp@100.24.62.161:5672/kdflkehp, localPort= 53271]
+2022-08-04 14:34:34.431  INFO 64660 --- [           main] h.s.SpringbootRabbitmqExampleApplication : Started SpringbootRabbitmqExampleApplication in 4.99 seconds (JVM running for 5.434)
+2022-08-04 14:34:38.300  INFO 64660 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-04 14:34:38.300  INFO 64660 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-04 14:34:38.300  INFO 64660 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-08-04 14:34:38.915  INFO 64660 --- [ntContainer#0-1] c.h.s.consumer.User                      : Message received from queue : OrderStatus(order=Order(orderId=35f20814-29a0-4066-a409-9b416ec2ce1d, name=Uzumaki Naruto, qty=12, price=12500.0), status=PROCESS, message=order placed successfully in Cibiuk)
+2022-08-04 14:35:42.946  INFO 64660 --- [ntContainer#0-1] c.h.s.consumer.User                      : Message received from queue : OrderStatus(order=null, status=null, message=null)
+2022-08-04 14:36:41.943  INFO 64660 --- [ntContainer#0-1] c.h.s.consumer.User                      : Message received from queue : OrderStatus(order=Order(orderId=a4aab73c-9f37-4f48-95f7-96912ecda4b9, name=Uzumaki Naruto, qty=12, price=12500.0), status=PROCESS, message=order placed successfully in Cibiuk)
 ``` 
