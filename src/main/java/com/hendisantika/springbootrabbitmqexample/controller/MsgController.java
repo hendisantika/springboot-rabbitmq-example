@@ -2,10 +2,14 @@ package com.hendisantika.springbootrabbitmqexample.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hendisantika.springbootrabbitmqexample.dto.Corporation;
+import com.hendisantika.springbootrabbitmqexample.dto.Item;
+import com.hendisantika.springbootrabbitmqexample.service.RabbitMqService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +35,8 @@ public class MsgController {
 
     private final Source source;
 
+    private final RabbitMqService rabbitMqService;
+
     @PostMapping(value = "/get-details")
     public String sendMessage(@RequestBody String payload) throws IOException {
         ObjectMapper ob = new ObjectMapper();
@@ -43,5 +49,11 @@ public class MsgController {
         source.output().send(MessageBuilder.withPayload(corporation).setHeader("myheader", "myheaderValue").build());
         log.info("success");
         return "Message sent to RabbitMQ";
+    }
+
+    @PostMapping("/items")
+    public ResponseEntity<String> postMessage(@RequestBody Item item) {
+        rabbitMqService.sendMessage(item);
+        return new ResponseEntity<>("Item pushed to RabbitMQ", HttpStatus.CREATED);
     }
 }
