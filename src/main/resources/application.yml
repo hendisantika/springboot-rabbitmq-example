@@ -8,11 +8,12 @@ spring:
   cloud:
     stream:
       bindings:
-      output:
-        destination: CorporateDestination
+        output:
+          destination: CorporateDestination
 
 logging:
   level:
-  org.springframework.cloud.stream: debug
+    root: ERROR
+    org.springframework.cloud.stream: debug
 
 
