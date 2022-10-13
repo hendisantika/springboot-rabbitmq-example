@@ -29,17 +29,17 @@ public class MessagingConfig {
     public static final String ROUTING_KEY = "hendi_routingKey";
 
     @Bean
-    public Queue queue() {
+    public Queue queue2() {
         return new Queue(QUEUE);
     }
 
     @Bean
-    public TopicExchange exchange() {
+    public TopicExchange exchange2() {
         return new TopicExchange(EXCHANGE);
     }
 
     @Bean
-    public Binding binding(Queue queue, TopicExchange exchange) {
+    public Binding binding2(Queue queue, TopicExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
     }
 

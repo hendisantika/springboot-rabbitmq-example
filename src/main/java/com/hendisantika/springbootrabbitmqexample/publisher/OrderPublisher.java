@@ -3,8 +3,8 @@ package com.hendisantika.springbootrabbitmqexample.publisher;
 import com.hendisantika.springbootrabbitmqexample.config.MessagingConfig;
 import com.hendisantika.springbootrabbitmqexample.dto.Order;
 import com.hendisantika.springbootrabbitmqexample.dto.OrderStatus;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,10 +24,10 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/order")
+@RequiredArgsConstructor
 public class OrderPublisher {
 
-    @Autowired
-    private RabbitTemplate template;
+    private final AmqpTemplate amqpTemplate;
 
     @PostMapping("/{restaurantName}")
     public String bookOrder(@RequestBody Order order, @PathVariable String restaurantName) {
@@ -35,7 +35,7 @@ public class OrderPublisher {
         //restaurantservice
         //payment service
         OrderStatus orderStatus = new OrderStatus(order, "PROCESS", "order placed successfully in " + restaurantName);
-        template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_KEY, orderStatus);
+        amqpTemplate.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_KEY, orderStatus);
         return "Success !!";
     }
 }
